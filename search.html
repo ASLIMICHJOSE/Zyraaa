@@ -197,6 +197,24 @@ document.addEventListener("DOMContentLoaded", () => {
     updateRecentUI();
 });
 
+ document.getElementById('menu-btn').addEventListener('click', function () {
+      this.classList.toggle('active');
+      document.getElementById('navMenu').classList.toggle('show');
+    });
+
+    document.getElementById("openSearch").addEventListener("click", function() {
+      window.location.href = "search.html";
+    });
+
+    document.querySelectorAll('#navMenu > span, #navMenu > p').forEach(item => {
+      item.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          document.getElementById('navMenu').classList.remove('show');
+          document.getElementById('menu-btn').classList.remove('active');
+        }
+      });
+    });
+
 </script>
 
 
